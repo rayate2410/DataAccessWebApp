@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	
+		<div class="jumbotron">
+			<h2>Add new Testcase</h2>
+			<form class="form-contact" action="/testcase/addTestCase/" method="POST" enctype="multipart/form-data">
+				
+				{% csrf_token %} 
+				
+				{{ testcase_form }}
+			
+   <input type="submit" value="Submit"  class="btn btn-primary">
+  
+</form>
+   
+		</div>
+		
+	{% endblock %}
+	
+	{% block logout %}
+	
+		
+		
+	{% endblock %}
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+	{% block content %}
+		
+		
+		{% if testcases.count == 0 %}
+
+			<div class="jumbotron">
+				<h1>Sorry Shaktimaan!! No testcases are added. Shame on you..</h1>
+				<p>Add new if you want to!</p>
+				<p><a class="btn btn-primary btn-lg" role="button" href="/testcase/addTestCase">Add New</a></p>
+			</div>
+		{% else %}
+			<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Testcases</div>
+				  
+				  <table class="table">
+				  <tr>
+					<th>
+						#
+					</th>
+					<th>
+						Title
+					</th>
+					
+					<th>
+						Status
+					</th>
+					<th>
+						Date Added
+					</th>
+				  </tr>
+			{% for tc in testcases %}
+				
+				 
+				<tr> 
+				<td>{{ tc.id }}</td>
+				<td><b><a href="/testcase/get/{{ tc.id }}">{{ tc.title }}</a></b></td>
+				<td>{{ tc.status }}</td>
+				<td>{{ tc.creation_date }}</td>
+				
+				</tr>
+				
+				
+				
+			{% endfor %}
+			</table>
+		{% endif %}
+		
+		<p><a class="btn btn-primary btn-lg" role="button" href="/testcase/search/">Search</a></p>
+	{% endblock %}
+	{% block logout %}
+	
+		<li><a href="/logout">Logout</a></li> 
+		
+{% endblock %}
+

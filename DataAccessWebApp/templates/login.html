@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	
+		<div class="jumbotron">
+			<div style="margin-left: 35%;">
+				<form name="input" method="post" action="/auth/">{% csrf_token %}
+				
+					Username: <input type="text" name="username"><br><br>
+					Password: <input type="password" name="password"><br><br>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+		
+	{% endblock %}
+

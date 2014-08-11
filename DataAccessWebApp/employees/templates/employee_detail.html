@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Details about Employee</h1>
+	<body>
+
+	
+	<div class="jumbotron">
+	<h2>{{ emp.emp_name }}</h2><br>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Roll No: </h3>
+	</div>
+	<div class="panel-body">
+		{{ emp.emp_roll_no }}
+	</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Salary</h3>
+	</div>
+	<div class="panel-body">
+		{{ emp.emp_salary }}
+	</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Post:</h3>
+	</div>
+	<div class="panel-body">
+		{{ emp.emp_post }}
+	</div>
+	</div>
+	 <div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Profile</h3>
+	</div>
+	<div class="panel-body">
+		{{ emp.emp_profile }}
+	</div>
+	</div>
+	 <div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Joining Date:</h3>
+	</div>
+	<div class="panel-body">
+		{{ emp.emp_join_date }}
+	</div>
+	</div>
+	
+	</div>
+
+{% endblock %}
+
+
+

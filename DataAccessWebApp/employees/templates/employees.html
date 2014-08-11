@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+	{% block content %}
+		{% if employees.count == 0 %}
+
+			<div class="jumbotron">
+				<h1>Sorry Shaktimaan!! No employees in company.. Shame on you..</h1>
+				<p>Add new if you want to!</p>
+				<p><a class="btn btn-primary btn-lg" role="button" href="/employees/addnew">Add New</a></p>
+			</div>
+		{% else %}
+			<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Your Employees</div>
+				  <div class="panel-body">
+					<p>This is list of all your employees. Click on name of employee to see in detail.</p>
+				  </div>
+				  <table class="table">
+				  <tr>
+					<th>
+						#
+					</th>
+					<th>
+						No.
+					</th>
+					
+					<th>
+						Name
+					</th>
+					<th>
+						Post
+					</th>
+				  </tr>
+			{% for emp in employees %}
+				
+				 
+				<tr> 
+				<td>{{ emp.id }}</td>
+				<td><b><a href="/employees/get?id={{ emp.id }}">{{ emp.emp_name }}</a></b></td>
+				<td>{{ emp.emp_roll_no }}</td>
+				<td>{{ emp.emp_post }}</td>
+				
+				</tr>
+				
+				
+				
+			{% endfor %}
+			</table>
+		{% endif %}
+	{% endblock %}
+

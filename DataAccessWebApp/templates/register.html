@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	
+		<div class="jumbotron">
+			<h2>Register with EMS</h2>
+			<form class="form-contact" action="/register/" method="POST">
+				
+				{% csrf_token %} 
+				
+				{{ registration_form }}
+			<!--	{% for field in registration_form %}
+				
+					{% if "password" in field.name %}
+						<div class="input-group">
+							<span class="input-group-addon">{{ field.label }}</span>
+							<input type="password" class="form-control">
+						</div><br>
+					{% else %}
+									
+						<div class="input-group">
+						<span class="input-group-addon">{{ field.label }}</span>
+								<input type="text" class="form-control">
+						</div><br>
+					
+					{% endif %} -->
+
+				
+			<!--	  <label  for="id_{{ field.name }}">{{ field.label }}</label>
+					<div >
+					  <input type="text" 
+						name="{{ field.name }}"
+						id="id_{{ field.name }}"
+						value="{{ field.value }}" > 
+						<p class="help-text">{{ field.help_text }} </p>
+					   </div>
+			
+				{% endfor %}-->	
+   <input type="submit" value="Submit"  class="btn btn-primary">
+  
+</form>
+   
+		</div>
+		
+	{% endblock %}
+	
+	{% block logout %}
+	
+		
+		
+	{% endblock %}
+

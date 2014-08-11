@@ -1,0 +1,8 @@
+{% if tc.count > 0 %}
+	{% for testcase in tc %}
+		<li>
+			<a href="/testcase/get/{{ testcase.id }}">{{ testcase.title }}</a></li>
+	{% endfor %}
+{% else %}
+	<li>None to show!</a></li>
+{% endif %}

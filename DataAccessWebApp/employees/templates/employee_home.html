@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="jumbotron">
+		<h1>Welcome to Employees page.</h1>
+		<p>Manage your employees here.</p>
+		<div>
+			<p><a class="btn btn-primary btn-lg" role="button" href="/employees/getall">See them all</a></p>
+			<p><a class="btn btn-primary btn-lg" role="button" href="/employees/addnew">Add New</a></p>
+			
+			<p>Last viewed employee: <a href="/employees/get?id={{ emp.id }}">{{ emp.emp_name }}</a></p>
+		</div>
+	</div>
+		
+{% endblock %}
+
+{% block logout %}
+	
+		
+		
+{% endblock %}

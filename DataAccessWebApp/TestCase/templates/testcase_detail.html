@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Details about Testcase</h1>
+	<body>
+
+	
+	<div class="jumbotron">
+		<h2>{{ tc.title }}</h2><br>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<h3 class="panel-title">Description</h3>
+		</div>
+		<div class="panel-body">
+			{{ tc.description }}
+		</div>
+		</div>
+		
+		{% if tc.screenshot %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Screenshot</h3>
+				</div>
+				<div class="panel-body">
+					<img src="/static/{{ tc.screenshot }}" width="200"/>
+				</div>
+			</div>
+		{% endif %}
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<h3 class="panel-title">Status</h3>
+		</div>
+		<div class="panel-body">
+			{{ tc.status }}
+		</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			<h3 class="panel-title">Creation Date</h3>
+		</div>
+		<div class="panel-body">
+			{{ tc.creation_date }}
+		</div>
+		
+		</div>
+		 
+	<p><a class="btn btn-primary btn-lg" role="button" onclick="execute()">Execute</a></p>
+	</div>
+	
+	
+	<script>
+		function execute() {
+	    	var status = prompt("Pass or Fail", "Pass");
+	    	
+			if (status != null) {
+				if(status == "Pass" || status == "Fail")
+				{
+					window.location = 'http://127.0.0.1:8000/testcase/status/{{ tc.id }}?status='+status				}
+				else
+				{
+					alert("Provide valid input");
+				}			
+				
+	
+			}
+			
+    		
+
+		}
+	</script>
+
+{% endblock %}
+
+
+

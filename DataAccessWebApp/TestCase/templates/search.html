@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	
+		<div class="jumbotron">
+			<h1>Search by testcase title.</h1>
+			<form class="navbar-form navbar-left" role="search">
+			{% csrf_token %}
+      	  <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" id="search">
+       	 </div>
+     	  
+      </form>
+		</div>
+		
+		<ul id="search_results">
+		
+		</ul>
+		
+	{% endblock %}
+	
+	{% block logout %}
+	
+		<li><a href="/logout">Logout</a></li> 
+		
+	{% endblock %}
+	
+	
+

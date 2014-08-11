@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+	{% block content %}
+		<div class="jumbotron">
+	<h1>Welcome to Testcase page.</h1>
+	<p>Manage your testcases here.</p>
+	<div>
+	<p><a class="btn btn-primary btn-lg" role="button" href="/testcase/all">See them all</a></p>
+	<p><a class="btn btn-primary btn-lg" role="button" href="/testcase/addTestCase">Add New</a></p>
+	
+	
+	</div>
+	</div>
+		
+{% endblock %}
+
+{% block logout %}
+	
+		<li><a href="/logout">Logout</a></li> 
+		
+{% endblock %}
